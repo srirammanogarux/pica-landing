@@ -89,6 +89,29 @@ img.sprite{image-rendering:pixelated;image-rendering:crisp-edges;display:block}
 }
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 
+/* -------- three-act spine (mimo-style) -------- */
+.h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.04;letter-spacing:-.5px}
+.acts__head{text-align:center;display:flex;flex-direction:column;gap:.5rem;align-items:center;margin-bottom:clamp(2rem,5vw,3.5rem)}
+.act{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,5vw,4rem);align-items:center;margin-bottom:clamp(2.5rem,6vw,4.5rem)}
+.act:last-child{margin-bottom:0}
+.act--reverse .act__copy{order:2}
+.act--reverse .act__demo{order:1}
+.act__copy{display:flex;flex-direction:column;gap:.7rem}
+.act__num{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);font-weight:500}
+.act__copy p{font-size:1.02rem;max-width:44ch;color:#3a2114}
+.act__demo{display:flex;justify-content:center}
+.phone--static{width:min(360px,100%)}
+.phone--static .thread{height:auto;max-height:none}
+.mode-badge--own{background:#6C4AB6;color:#fff}
+/* own-it recap card */
+.owncard{background:var(--ink);border:2px solid #000;box-shadow:3px 3px 0 var(--dark);padding:.9rem 1rem;color:var(--sky)}
+.owncard__title{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grass);margin-bottom:.6rem}
+.owncard__list{list-style:none;display:flex;flex-direction:column;gap:.35rem;margin-bottom:.7rem}
+.owncard__list li{position:relative;padding-left:1.4rem;font-family:var(--font-mono);font-size:.82rem;color:var(--sky)}
+.owncard__list li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:700}
+.owncard__count{font-family:var(--font-mono);font-size:.74rem;color:var(--orange-lt);border-top:2px solid #333;padding-top:.55rem}
+.owncard__count span{font-family:var(--font-display);font-size:1.1rem;color:var(--orange)}
+
 /* -------- buy -------- */
 .buy__body{flex-direction:row;gap:2rem;flex-wrap:wrap}
 .buy__left{flex:1 1 260px;display:flex;flex-direction:column;gap:.7rem}
@@ -178,6 +201,9 @@ img.sprite{image-rendering:pixelated;image-rendering:crisp-edges;display:block}
   .hero__demo{order:-1}
   .modes__grid{grid-template-columns:1fr}
   .buy__body{flex-direction:column}
+  .act{grid-template-columns:1fr;gap:1.2rem}
+  .act--reverse .act__copy{order:1}
+  .act--reverse .act__demo{order:2}
 }
 @media (max-width:640px){
   .footer{padding-bottom:6rem}

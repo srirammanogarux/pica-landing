@@ -79,27 +79,93 @@
 
   <div class="ground"><div class="ground__pica" id="ground-pica"><img class="sprite sprite--40" src="/pica.png" alt="" width="40" height="40" /></div></div>
 
-  <!-- ===== 4. TWO MODES ===== -->
-  <section class="section modes">
-    <div class="modes__grid">
-      <article class="dbox">
-        <div class="dbox__face"><img class="sprite sprite--40" src="/pica.png" alt="Pica" width="40" height="40" /></div>
-        <div class="dbox__body">
-          <span class="dbox__tag">Mode 01</span>
-          <h3 class="h3">Teach</h3>
-          <p>The agent writes. Pica translates — while the code is still on your screen. One concept per change, never a wall of text.</p>
-          <p>It remembers what it's already taught you, so week two is shorter than week one.</p>
+  <!-- ===== 4. THE THREE-ACT SPINE: DECODE → PRACTICE → OWN IT ===== -->
+  <section class="section acts">
+    <header class="acts__head">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2">One cat. Three moves.<br /><span class="accent">Code you finally understand.</span></h2>
+    </header>
+
+    <!-- Act 1 — DECODE (text · phone) -->
+    <div class="act">
+      <div class="act__copy">
+        <span class="act__num">01 · Decode</span>
+        <h3 class="h3">Paste anything. Get it in plain designer.</h3>
+        <p>An error, a diff, a file your agent wrote — drop it in Telegram. Pica explains what it actually does in <em>your</em> language, one concept at a time. No jargon, no lecture.</p>
+      </div>
+      <div class="act__demo">
+        <div class="phone phone--static">
+          <div class="phone__header">
+            <img class="sprite sprite--28" src="/pica.png" alt="" width="28" height="28" />
+            <div class="phone__title"><strong>Pica</strong><span class="phone__status">online · reading your code</span></div>
+            <span class="mode-badge mode-badge--teach">DECODE</span>
+          </div>
+          <div class="thread thread--static">
+            <div class="msg msg--err">TypeError: Cannot read properties of undefined (reading 'map')</div>
+            <div class="msg msg--pica"><img class="sprite sprite--28 msg__avatar" src="/pica.png" alt="" width="28" height="28" /><span class="msg__text">You asked a list to draw itself before the list existed. Your data hasn't arrived yet — it's still <strong>undefined</strong> — and you called <strong>.map()</strong> on nothing.</span></div>
+            <div class="msg msg--pica"><img class="sprite sprite--28 msg__avatar" src="/pica.png" alt="" width="28" height="28" /><span class="msg__text"><strong>Concept — loading state.</strong> Your screen renders <em>before</em> the data lands. Tell it what to show while it's still empty. 🐾</span></div>
+          </div>
         </div>
-      </article>
-      <article class="dbox">
-        <div class="dbox__face"><img class="sprite sprite--40" src="/pica.png" alt="Pica" width="40" height="40" /></div>
-        <div class="dbox__body">
-          <span class="dbox__tag">Mode 02</span>
-          <h3 class="h3">Practice</h3>
-          <p>Pica stops the agent mid-task and gives you the keyboard. Hints arrive one at a time. You get the answer only after you've actually tried.</p>
-          <p>You start writing one line. You end up owning the file.</p>
+      </div>
+    </div>
+
+    <!-- Act 2 — PRACTICE (phone · text) -->
+    <div class="act act--reverse">
+      <div class="act__copy">
+        <span class="act__num">02 · Practice</span>
+        <h3 class="h3">Then it makes you write the next one.</h3>
+        <p>Pica stops the agent and hands you the keyboard. Hints come one at a time — you only get the answer after you've actually tried. You start with one line. You end up owning the file.</p>
+      </div>
+      <div class="act__demo">
+        <div class="phone phone--static">
+          <div class="phone__header">
+            <img class="sprite sprite--28" src="/pica.png" alt="" width="28" height="28" />
+            <div class="phone__title"><strong>Pica</strong><span class="phone__status">online · your turn</span></div>
+            <span class="mode-badge mode-badge--practice">PRACTICE</span>
+          </div>
+          <div class="thread thread--static">
+            <div class="msg msg--pica"><img class="sprite sprite--28 msg__avatar" src="/pica.png" alt="" width="28" height="28" /><span class="msg__text">Fix's left out on purpose. Line 14, above the return. One line. Off you go.</span></div>
+            <div class="msg msg--code">  const posts = useFeed();
+
+<span class="hl">  // TODO(you): handle the empty state</span>
+
+  return (</div>
+            <div class="msg msg--user mono">if (!posts) return &lt;Spinner /&gt;</div>
+            <div class="msg msg--pica"><img class="sprite sprite--28 msg__avatar" src="/pica.png" alt="" width="28" height="28" /><span class="msg__text">✓ That's it — and cleaner than mine. You returned early instead of nesting. <strong>New concept: early return.</strong></span></div>
+          </div>
         </div>
-      </article>
+      </div>
+    </div>
+
+    <!-- Act 3 — OWN IT (text · phone recap) -->
+    <div class="act">
+      <div class="act__copy">
+        <span class="act__num">03 · Own it</span>
+        <h3 class="h3">The file you couldn't read? Now it's yours.</h3>
+        <p>Pica remembers every concept it taught you, so week two is shorter than week one. You stop nodding along in standups — and start shipping code you actually understand.</p>
+      </div>
+      <div class="act__demo">
+        <div class="phone phone--static">
+          <div class="phone__header">
+            <img class="sprite sprite--28" src="/pica.png" alt="" width="28" height="28" />
+            <div class="phone__title"><strong>Pica</strong><span class="phone__status">online · you're levelling up</span></div>
+            <span class="mode-badge mode-badge--own">OWN IT</span>
+          </div>
+          <div class="thread thread--static">
+            <div class="owncard">
+              <p class="owncard__title">This week you owned</p>
+              <ul class="owncard__list">
+                <li>loading state</li>
+                <li>persistence</li>
+                <li>side effects</li>
+                <li>early return</li>
+              </ul>
+              <p class="owncard__count"><span>4</span> concepts owned · 5-day streak 🔥</p>
+            </div>
+            <div class="msg msg--pica"><img class="sprite sprite--28 msg__avatar" src="/pica.png" alt="" width="28" height="28" /><span class="msg__text">The file you couldn't read last Tuesday? You just edited it without me. 🐾</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
