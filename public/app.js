@@ -44,10 +44,12 @@ document.querySelectorAll("[data-signup]").forEach((form)=>{
     if(!validEmail(email)){ if(msg) msg.textContent = "That email looks off — mind checking it?"; return; }
     if(msg) msg.textContent = "Adding you…";
     const r = await saveEmail(email);
-    if(msg) msg.textContent = (r.ok || r.offline)
-      ? "You're on the list 🐾 I'll email your install link soon."
-      : "Hmm, that didn't save — try again in a sec?";
-    if(r.ok || r.offline) form.reset();
+    if(r.ok || r.offline){
+      if(msg) msg.innerHTML = 'You\'re in 🐾 <a href="/pica.vsix" download>Download the plugin</a>, install it in VS Code / Cursor (Extensions → ⋯ → <em>Install from VSIX</em>), and tell Pica this same email.';
+      form.reset();
+    } else if(msg){
+      msg.textContent = "Hmm, that didn't save — try again in a sec?";
+    }
   });
 });
 

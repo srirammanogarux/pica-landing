@@ -16,4 +16,12 @@ export default defineSchema({
     dodoRef: v.optional(v.string()),
     createdAt: v.number(),
   }).index("by_email", ["email"]),
+
+  // every Hermes call the plugin makes, per user — activation + usage metrics
+  usage: defineTable({
+    email: v.string(),
+    kind: v.string(),            // lesson | chat
+    tokens: v.number(),
+    createdAt: v.number(),
+  }).index("by_email", ["email"]),
 });
