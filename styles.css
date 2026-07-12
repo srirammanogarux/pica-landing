@@ -1,0 +1,170 @@
+/* ============ PICA — pixel RPG design system ============ */
+:root{
+  --orange:#E8823C; --orange-lt:#F7A878; --brown:#8B4A2B;
+  --dark:#4A2A1A;   --grass:#5E9E45;     --sky:#E8EDE4;
+  --ink:#1A1614;    --paper:#F4F6F0;     --white:#FFFFFF;
+  --shadow:6px 6px 0 var(--dark);
+  --shadow-sm:4px 4px 0 var(--dark);
+  --border:3px solid var(--dark);
+  --font-display:"Pixelify Sans",system-ui,sans-serif;
+  --font-body:"Space Grotesk",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);font-weight:400;color:var(--dark);
+  background:var(--sky);line-height:1.5;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img.sprite{image-rendering:pixelated;image-rendering:crisp-edges;display:block}
+.sprite--28{width:28px;height:28px}.sprite--32{width:32px;height:32px}
+.sprite--40{width:40px;height:40px}.sprite--48{width:48px;height:48px}
+
+/* -------- type -------- */
+.h1{font-family:var(--font-display);font-weight:700;font-size:clamp(1.7rem,5.2vw,3.4rem);line-height:1.02;letter-spacing:-.5px;overflow-wrap:break-word;word-break:break-word}
+.h3{font-family:var(--font-display);font-weight:700;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.05;margin-bottom:.2em}
+.accent{color:var(--orange)}
+.eyebrow{font-family:var(--font-mono);font-weight:500;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brown)}
+.lede{font-size:clamp(1rem,1.6vw,1.18rem);font-weight:400;max-width:46ch;color:#3a2114}
+.microcopy{font-family:var(--font-mono);font-size:.74rem;color:var(--brown);line-height:1.5}
+.wordmark{font-family:var(--font-display);font-weight:700;font-size:1.35rem;letter-spacing:.5px}
+
+/* -------- layout -------- */
+.section{max-width:var(--maxw);margin:0 auto;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.1rem,4vw,2rem)}
+
+/* -------- nav -------- */
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:.7rem clamp(1.1rem,4vw,2rem);background:var(--sky);border-bottom:var(--border)}
+.nav__brand{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--dark)}
+
+/* -------- buttons -------- */
+.btn{font-family:var(--font-display);font-weight:700;font-size:1rem;cursor:pointer;
+  border:var(--border);background:var(--orange);color:var(--ink);padding:.7rem 1.25rem;
+  box-shadow:var(--shadow-sm);text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;
+  transition:transform .05s steps(2),box-shadow .05s steps(2);line-height:1}
+.btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--dark)}
+.btn--primary{background:var(--orange)}
+.btn--primary:hover{background:var(--orange-lt)}
+.btn--ghost{background:var(--paper)}
+.btn--ghost:hover{background:var(--white)}
+.btn--sm{font-size:.85rem;padding:.5rem .85rem;box-shadow:var(--shadow-sm)}
+.btn--block{width:100%;justify-content:center;padding:.85rem 1rem;font-size:1.1rem}
+
+/* -------- hero -------- */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
+.hero__copy{display:flex;flex-direction:column;gap:1.1rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.2rem}
+.hero__demo{display:flex;justify-content:center}
+
+/* -------- dialogue box (the signature element) -------- */
+.dbox{position:relative;background:var(--paper);border:var(--border);box-shadow:var(--shadow);
+  display:flex;gap:0;padding:0;margin-top:1.4rem}
+.dbox__face{flex:0 0 auto;padding:1.1rem;border-right:var(--border);background:var(--sky);
+  display:flex;align-items:flex-start}
+.dbox__body{padding:1.2rem 1.4rem;display:flex;flex-direction:column;gap:.55rem}
+.dbox__tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);font-weight:500}
+.dbox__body p{font-size:.98rem;max-width:52ch}
+.dbox--wide{margin-top:0}
+.modes__grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.modes__grid .dbox{margin-top:0}
+
+/* -------- ground line -------- */
+.ground{position:relative;height:26px;background:
+  repeating-linear-gradient(90deg,var(--grass) 0 12px,#549040 12px 24px);
+  border-top:var(--border);border-bottom:var(--border)}
+.ground__pica{position:absolute;left:2%;bottom:100%;transition:transform .1s steps(2)}
+@media (prefers-reduced-motion:no-preference){
+  .ground__pica.walk{animation:bob .5s steps(2) infinite}
+}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+
+/* -------- buy -------- */
+.buy__body{flex-direction:row;gap:2rem;flex-wrap:wrap}
+.buy__left{flex:1 1 260px;display:flex;flex-direction:column;gap:.7rem}
+.buy__right{flex:1 1 240px;display:flex;flex-direction:column;gap:.55rem}
+.price{display:flex;align-items:baseline;gap:.6rem}
+.price__num{font-family:var(--font-display);font-weight:700;font-size:clamp(2.6rem,8vw,3.6rem);color:var(--orange);line-height:1}
+.price__note{font-family:var(--font-mono);font-size:.78rem;color:var(--brown)}
+.ticklist{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.ticklist li{position:relative;padding-left:1.5rem;font-size:.95rem}
+.ticklist li::before{content:"✓";position:absolute;left:0;color:var(--grass);font-weight:700;font-family:var(--font-mono)}
+
+/* -------- forms -------- */
+.field-label{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--brown)}
+.field{font-family:var(--font-body);font-size:1rem;padding:.75rem .85rem;border:var(--border);background:var(--white);color:var(--ink);width:100%}
+.field:focus{outline:none;box-shadow:var(--shadow-sm)}
+.wform{display:flex;flex-direction:column;gap:.7rem;margin-top:.4rem}
+
+/* ================= PHONE / PROTOTYPE ================= */
+.phone{width:min(360px,100%);background:var(--paper);border:var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column}
+.phone__tabs{display:flex;align-items:stretch;border-bottom:var(--border);background:var(--sky)}
+.tab{flex:1;font-family:var(--font-display);font-weight:700;font-size:.95rem;padding:.6rem;background:var(--sky);border:none;border-right:var(--border);cursor:pointer;color:var(--brown)}
+.tab.is-active{background:var(--orange);color:var(--ink)}
+.tab-replay{width:44px;background:var(--paper);border:none;font-size:1.1rem;cursor:pointer;color:var(--dark)}
+.phone__header{display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;background:var(--ink);color:var(--white);border-bottom:var(--border)}
+.phone__title{display:flex;flex-direction:column;line-height:1.15}
+.phone__title strong{font-family:var(--font-body);font-weight:500;font-size:.95rem}
+.phone__status{font-family:var(--font-mono);font-size:.62rem;color:var(--grass)}
+.thread{background:#DDE4D6;padding:.8rem;display:flex;flex-direction:column;gap:.55rem;height:400px;overflow-y:auto;scroll-behavior:smooth}
+.phone__composer{display:flex;align-items:center;gap:.5rem;padding:.55rem .7rem;background:var(--sky);border-top:var(--border)}
+.composer__field{flex:1;font-family:var(--font-body);font-size:.85rem;color:var(--brown);background:var(--white);border:2px solid var(--dark);padding:.4rem .6rem}
+.composer__send{color:var(--orange)}
+
+/* messages */
+.msg{max-width:82%;padding:.55rem .7rem;border:2px solid var(--dark);font-size:.86rem;line-height:1.4;box-shadow:3px 3px 0 var(--dark);animation:pop .18s steps(2)}
+.msg strong{font-weight:500;color:var(--brown)}
+.msg--pica{align-self:flex-start;background:var(--white);display:flex;gap:.5rem;align-items:flex-start}
+.msg--user{align-self:flex-end;background:var(--orange-lt)}
+.msg__avatar{flex:0 0 auto}
+.msg__text{min-width:0}
+.msg--err{align-self:flex-end;background:#F3C9C0;border-color:#7a2a1a;font-family:var(--font-mono);font-size:.74rem;color:#5a1a0e;word-break:break-word}
+.msg--code{align-self:flex-start;background:var(--ink);color:#E8EDE4;font-family:var(--font-mono);font-size:.74rem;max-width:92%;white-space:pre-wrap;word-break:break-word;border-color:#000}
+.msg--code .hl{background:var(--orange);color:var(--ink);padding:0 2px}
+.msg--user.mono{font-family:var(--font-mono);font-size:.76rem}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* voice note */
+.voice{display:flex;align-items:center;gap:.55rem}
+.voice__play{width:26px;height:26px;flex:0 0 auto;background:var(--orange);border:2px solid var(--dark);display:flex;align-items:center;justify-content:center;color:var(--ink);cursor:pointer}
+.voice__wave{flex:1;display:flex;align-items:center;gap:2px;height:22px}
+.voice__wave i{flex:1;background:var(--brown);display:block}
+.voice__time{font-family:var(--font-mono);font-size:.68rem;color:var(--brown)}
+
+/* typing indicator */
+.typing{align-self:flex-start;background:var(--white);border:2px solid var(--dark);box-shadow:3px 3px 0 var(--dark);padding:.5rem .7rem;display:flex;gap:.6rem;align-items:center}
+.typing__dots{display:flex;gap:3px}
+.typing__dots span{width:6px;height:6px;background:var(--brown);display:block;animation:blink 1s steps(2) infinite}
+.typing__dots span:nth-child(2){animation-delay:.2s}
+.typing__dots span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,60%{opacity:.25}30%{opacity:1}}
+
+/* -------- footer -------- */
+.footer{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;max-width:var(--maxw);margin:0 auto;
+  padding:1.6rem clamp(1.1rem,4vw,2rem) 5rem;border-top:var(--border)}
+.footer__line{font-family:var(--font-mono);font-size:.74rem;color:var(--brown);margin-left:auto}
+
+/* -------- sticky mobile buy bar -------- */
+.buybar{display:none}
+@media (max-width:640px){
+  .buybar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;align-items:center;justify-content:space-between;
+    gap:.8rem;padding:.6rem .9rem;background:var(--paper);border-top:var(--border)}
+  .buybar__price{font-family:var(--font-mono);font-size:.8rem;font-weight:500}
+}
+
+/* -------- responsive -------- */
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .hero__demo{order:-1}
+  .modes__grid{grid-template-columns:1fr}
+  .buy__body{flex-direction:column}
+}
+@media (max-width:640px){
+  .footer{padding-bottom:6rem}
+  .dbox__face{padding:.8rem}
+  .h1{font-size:1.85rem}
+  .lede{font-size:1rem}
+  .nav .btn--sm{font-size:.78rem;padding:.45rem .7rem}
+  .hero{padding-top:1.5rem}
+}

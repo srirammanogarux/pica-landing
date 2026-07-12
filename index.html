@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pica — Your AI writes the code. Pica teaches you what it did.</title>
+  <meta name="description" content="Pica is a pixel-art cat in your Telegram. Paste any error, diff, or file you don't understand — it explains it in designer, not engineer. Then it makes you write the next one yourself. ₹99." />
+  <meta property="og:title" content="Pica — learn the code your AI just wrote" />
+  <meta property="og:description" content="A cat that lives in your Telegram and teaches designers the code their agent wrote. ₹99, yours forever." />
+  <meta property="og:image" content="/public/pica.png" />
+  <link rel="icon" href="/public/pica.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&family=Space+Grotesk:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- ===== 1. NAV ===== -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#top">
+      <img class="sprite sprite--32" src="/public/pica.png" alt="Pica" width="32" height="32" />
+      <span class="wordmark">Pica</span>
+    </a>
+    <button class="btn btn--primary btn--sm" data-buy>Get Pica — ₹99</button>
+  </header>
+
+  <a id="top"></a>
+
+  <!-- ===== 2. HERO ===== -->
+  <section class="hero section">
+    <div class="hero__copy">
+      <p class="eyebrow">For designers who ship code they can't read</p>
+      <h1 class="h1">Your AI writes the code.<br /><span class="accent">Pica teaches you what it did.</span></h1>
+      <p class="lede">Pica is a cat that lives in your Telegram. Paste any error, any diff, any file you don't understand — it explains it in designer, not engineer. Then it makes you write the next one yourself.</p>
+      <div class="cta-row">
+        <button class="btn btn--primary" data-buy>Get Pica — ₹99</button>
+        <a class="btn btn--ghost" href="#waitlist">Join the waitlist</a>
+      </div>
+      <p class="microcopy">One payment. Yours forever. Refund on request, no argument.</p>
+    </div>
+
+    <!-- ===== 3. THE PROTOTYPE ===== -->
+    <div class="hero__demo">
+      <div class="phone" id="proto">
+        <div class="phone__tabs" role="tablist">
+          <button class="tab is-active" data-tab="teach" role="tab">Teach</button>
+          <button class="tab" data-tab="practice" role="tab">Practice</button>
+          <button class="tab-replay" data-replay title="Replay">↻</button>
+        </div>
+        <div class="phone__header">
+          <img class="sprite sprite--28" src="/public/pica.png" alt="" width="28" height="28" />
+          <div class="phone__title">
+            <strong>Pica</strong>
+            <span class="phone__status">online · reading your code</span>
+          </div>
+        </div>
+        <div class="thread" id="thread" aria-live="polite"></div>
+        <div class="phone__composer">
+          <span class="composer__field">Message Pica…</span>
+          <span class="composer__send">➤</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ground"><div class="ground__pica" id="ground-pica"><img class="sprite sprite--40" src="/public/pica.png" alt="" width="40" height="40" /></div></div>
+
+  <!-- ===== 4. TWO MODES ===== -->
+  <section class="section modes">
+    <div class="modes__grid">
+      <article class="dbox">
+        <div class="dbox__face"><img class="sprite sprite--40" src="/public/pica.png" alt="Pica" width="40" height="40" /></div>
+        <div class="dbox__body">
+          <span class="dbox__tag">Mode 01</span>
+          <h3 class="h3">Teach</h3>
+          <p>The agent writes. Pica translates — while the code is still on your screen. One concept per change, never a wall of text.</p>
+          <p>It remembers what it's already taught you, so week two is shorter than week one.</p>
+        </div>
+      </article>
+      <article class="dbox">
+        <div class="dbox__face"><img class="sprite sprite--40" src="/public/pica.png" alt="Pica" width="40" height="40" /></div>
+        <div class="dbox__body">
+          <span class="dbox__tag">Mode 02</span>
+          <h3 class="h3">Practice</h3>
+          <p>Pica stops the agent mid-task and gives you the keyboard. Hints arrive one at a time. You get the answer only after you've actually tried.</p>
+          <p>You start writing one line. You end up owning the file.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="ground"></div>
+
+  <!-- ===== 5. BUY ===== -->
+  <section class="section buy" id="buy">
+    <div class="dbox dbox--wide">
+      <div class="dbox__face"><img class="sprite sprite--40" src="/public/pica.png" alt="Pica" width="40" height="40" /></div>
+      <div class="dbox__body buy__body">
+        <div class="buy__left">
+          <span class="dbox__tag">One price, no tiers</span>
+          <div class="price"><span class="price__num">₹99</span><span class="price__note">once · yours forever</span></div>
+          <ul class="ticklist">
+            <li>Both modes unlocked</li>
+            <li>Works with Claude Code, Cursor, any terminal</li>
+            <li>Runs in Telegram — nothing to install</li>
+            <li>Refund on request, no argument</li>
+          </ul>
+        </div>
+        <div class="buy__right">
+          <label class="field-label" for="buy-email">Your email</label>
+          <input class="field" id="buy-email" type="email" inputmode="email" placeholder="you@studio.com" autocomplete="email" />
+          <button class="btn btn--primary btn--block" data-buy>Pay ₹99 →</button>
+          <p class="microcopy" id="buy-msg">Secure checkout via Dodo. We save your email first, so if checkout hiccups we can still reach you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ground"></div>
+
+  <!-- ===== 6. WAITLIST + FOOTER ===== -->
+  <section class="section waitlist" id="waitlist">
+    <div class="dbox">
+      <div class="dbox__face"><img class="sprite sprite--40" src="/public/pica.png" alt="Pica" width="40" height="40" /></div>
+      <div class="dbox__body">
+        <span class="dbox__tag">Not ready?</span>
+        <h3 class="h3">Leave your email</h3>
+        <p>I'll send you a 60-second video of Pica reading a real error. 🐾</p>
+        <form class="wform" id="wform">
+          <input class="field" name="email" type="email" required inputmode="email" placeholder="you@studio.com" autocomplete="email" />
+          <input class="field" name="building" type="text" placeholder="What are you building right now? (optional)" />
+          <button class="btn btn--primary btn--block" type="submit">Send me the video</button>
+          <p class="microcopy" id="wform-msg" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <img class="sprite sprite--32" src="/public/pica.png" alt="Pica" width="32" height="32" />
+    <span class="wordmark">Pica</span>
+    <span class="footer__line">Built in a day. Refunds on request, always.</span>
+  </footer>
+
+  <!-- sticky mobile buy bar -->
+  <div class="buybar" id="buybar">
+    <span class="buybar__price">₹99 · yours forever</span>
+    <button class="btn btn--primary btn--sm" data-buy>Get Pica</button>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

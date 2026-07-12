@@ -1,0 +1,14 @@
+{
+  "name": "pica-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page for Pica — a pixel cat that teaches designers the code their AI wrote.",
+  "scripts": {
+    "dev": "python3 -m http.server 5173",
+    "convex": "convex dev",
+    "deploy": "wrangler pages deploy . --project-name=pica-landing"
+  },
+  "dependencies": {
+    "convex": "^1.17.0"
+  }
+}
