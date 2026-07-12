@@ -168,6 +168,30 @@ img.sprite{image-rendering:pixelated;image-rendering:crisp-edges;display:block}
 .maker__body p{font-size:1.02rem;color:#3a2114;max-width:60ch}
 .maker__sign{font-family:var(--font-mono);font-size:.82rem;color:var(--brown)}
 
+/* -------- simplified page: hero cat, signup, steps, join -------- */
+.sprite--hero{width:clamp(104px,22vw,148px);height:auto}
+.hero__cat{display:flex;justify-content:center;margin:.1rem 0}
+.signup{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;max-width:460px;margin:.5rem auto 0;width:100%}
+.signup .field{flex:1 1 200px;min-width:180px}
+.signup .btn{white-space:nowrap}
+.signup__msg{margin-top:.15rem}
+
+.steps{list-style:none;max-width:760px;margin:clamp(1.6rem,4vw,2.6rem) auto 0;display:flex;flex-direction:column;gap:1.1rem}
+.step{display:flex;gap:1.1rem;align-items:flex-start;background:var(--paper);border:var(--border);box-shadow:var(--shadow-sm);padding:1.15rem 1.3rem}
+.step__n{flex:0 0 auto;width:42px;height:42px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.35rem;background:var(--orange);border:2px solid var(--dark);color:var(--ink)}
+.step__title{font-family:var(--font-display);font-weight:700;font-size:1.18rem;margin-bottom:.2rem}
+.step p{font-size:.98rem;color:#3a2114;max-width:56ch}
+
+.join{margin-top:clamp(2.2rem,5vw,3.2rem)}
+.join__card{max-width:660px;margin:0 auto;background:var(--paper);border:var(--border);box-shadow:var(--shadow);display:flex;gap:1.2rem;padding:clamp(1.4rem,3vw,2rem);text-align:left}
+.join__pic{flex:0 0 auto;margin-top:.2rem}
+.join__body{display:flex;flex-direction:column;gap:.6rem;width:100%;min-width:0}
+.join__body p{font-size:1rem;color:#3a2114}
+.join__body .signup{justify-content:flex-start;margin:.35rem 0 0;max-width:none}
+@media (max-width:560px){
+  .join__card{flex-direction:column}
+}
+
 /* -------- buy -------- */
 .buy__body{flex-direction:row;gap:2rem;flex-wrap:wrap}
 .buy__left{flex:1 1 260px;display:flex;flex-direction:column;gap:.7rem}

@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pica — Your AI writes the code. Pica teaches you what it did.</title>
-  <meta name="description" content="Pica is a pixel-art cat that rides shotgun in VS Code & Cursor. It watches the code your AI writes and explains it in designer, not engineer — then makes you write the next one yourself. Free to start." />
+  <title>Pica — the cat that reads code so you can too</title>
+  <meta name="description" content="Pica is a pixel-art cat that rides shotgun in VS Code & Cursor. It watches the code your AI writes and explains it in designer, not engineer — then makes you write the next line yourself. Join the list." />
   <meta property="og:title" content="Pica — learn the code your AI just wrote" />
-  <meta property="og:description" content="A pixel cat in your editor that teaches designers the code their agent wrote. Free to start, ₹99 unlocks everything." />
+  <meta property="og:description" content="A pixel cat in your editor that teaches designers the code their agent wrote. Join the free list." />
   <meta property="og:image" content="/pica.png" />
   <link rel="icon" href="/pica.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,267 +15,104 @@
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <!-- ===== 1. NAV ===== -->
+  <!-- ===== NAV ===== -->
   <header class="nav" id="nav">
     <a class="nav__brand" href="#top">
       <img class="sprite sprite--32" src="/pica.png" alt="Pica" width="32" height="32" />
       <span class="wordmark">Pica</span>
     </a>
-    <a class="btn btn--primary btn--sm" href="#waitlist">Start free</a>
+    <a class="btn btn--primary btn--sm" href="#join">Join the list</a>
   </header>
 
   <a id="top"></a>
 
-  <!-- ===== MARQUEE TAPE ===== -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>PASTE ANY ERROR ✦ LEARN WHAT YOU SHIP ✦ STOP APPROVING BLINDLY ✦ FREE TO START ✦ LIVES IN VS CODE &amp; CURSOR ✦ </span>
-      <span>PASTE ANY ERROR ✦ LEARN WHAT YOU SHIP ✦ STOP APPROVING BLINDLY ✦ FREE TO START ✦ LIVES IN VS CODE &amp; CURSOR ✦ </span>
-    </div>
-  </div>
-
-  <!-- ===== 2. HERO (centered, amy-style) ===== -->
+  <!-- ===== HERO — where the cat lives ===== -->
   <section class="hero section">
     <div class="hero__copy">
       <p class="eyebrow">For designers who ship code they can't read</p>
+      <div class="hero__cat"><img class="sprite sprite--hero" src="/pica.png" alt="Pica the pixel cat" width="140" height="140" /></div>
       <h1 class="h1">Read the code your AI wrote<br /><span class="accent">like a text from a friend.</span></h1>
-      <p class="lede">Pica is a pixel cat that rides shotgun in your editor. It watches the code your AI writes and explains what it does in <em>designer</em>, not engineer — then makes you write the next one yourself.</p>
-      <div class="cta-row">
-        <a class="btn btn--primary" href="#waitlist">Start free</a>
-        <a class="btn btn--ghost" href="#proto">Watch it work</a>
-      </div>
-      <p class="microcopy">Free to start · Installs in VS Code &amp; Cursor · ₹99 unlocks everything</p>
-    </div>
-
-  </section>
-
-  <!-- ===== 3. THE DEMO — simulated editor walkthrough ===== -->
-  <section class="section demo-ide" id="proto">
-    <header class="acts__head">
-      <p class="eyebrow">Watch it work</p>
-      <h2 class="h2">Pica rides along while your AI codes.</h2>
-      <p class="demo-sub">Your agent writes. Pica notices the teachable bits, explains them in your words, then hands you the keyboard. Here's a real minute of it.</p>
-      <div class="tone-toggle" role="group" aria-label="Teaching tone">
-        <span>Teach me like a</span>
-        <button class="tone-btn is-active" data-tone="friend">Friend</button>
-        <button class="tone-btn" data-tone="professor">Professor</button>
-      </div>
-    </header>
-
-    <div class="ide" id="ide">
-      <div class="ide__bar">
-        <span class="ide__dots"><i></i><i></i><i></i></span>
-        <span class="ide__file">Feed.jsx</span>
-        <span class="ide__agent" id="ide-agent">● Hermes · writing</span>
-      </div>
-      <div class="ide__body">
-        <div class="ide__code"><pre id="ide-code" aria-hidden="true"></pre></div>
-        <aside class="ide__panel">
-          <div class="panel__head">
-            <img class="sprite sprite--28" src="/pica.png" alt="" width="28" height="28" />
-            <div class="phone__title"><strong>Pica</strong><span class="phone__status" id="panel-status">waking up…</span></div>
-          </div>
-          <div class="thread thread--panel" id="panel-thread" aria-live="polite"></div>
-        </aside>
-      </div>
-    </div>
-    <div class="demo-controls">
-      <button class="btn btn--ghost btn--sm" id="demo-replay">↻ Replay the minute</button>
+      <p class="lede">Pica is a pixel cat that rides shotgun in VS&nbsp;Code &amp; Cursor. It watches the code your AI writes and explains it in <em>designer</em>, not engineer — then makes you write the next line yourself.</p>
+      <form class="signup" data-signup aria-label="Join the list">
+        <input class="field" name="email" type="email" required inputmode="email" placeholder="you@studio.com" autocomplete="email" />
+        <button class="btn btn--primary" type="submit">Join the list</button>
+      </form>
+      <p class="microcopy signup__msg" data-signup-msg aria-live="polite">Free. We'll send your install link the moment Pica opens up. 🐾</p>
     </div>
   </section>
 
   <div class="ground"><div class="ground__pica" id="ground-pica"><img class="sprite sprite--40" src="/pica.png" alt="" width="40" height="40" /></div></div>
 
-  <!-- ===== 4. THE THREE-ACT SPINE: DECODE → PRACTICE → OWN IT ===== -->
-  <section class="section acts">
-    <header class="acts__head">
-      <p class="eyebrow">How it works</p>
-      <h2 class="h2">One cat. Three moves.<br /><span class="accent">Code you finally understand.</span></h2>
-    </header>
-
-    <!-- Act 1 — DECODE (text · phone) -->
-    <div class="act">
-      <div class="act__copy">
-        <span class="act__num">01 · Decode</span>
-        <h3 class="h3">Paste anything. Get it in plain designer.</h3>
-        <p>An error, a diff, a file your agent just wrote — Pica reads it right there in your editor. It explains what it actually does in <em>your</em> language, one concept at a time. No jargon, no lecture.</p>
-      </div>
-      <div class="act__demo">
-        <div class="phone phone--static">
-          <div class="phone__header">
-            <img class="sprite sprite--28" src="/pica.png" alt="" width="28" height="28" />
-            <div class="phone__title"><strong>Pica</strong><span class="phone__status">online · reading your code</span></div>
-            <span class="mode-badge mode-badge--teach">DECODE</span>
-          </div>
-          <div class="thread thread--static">
-            <div class="msg msg--err">TypeError: Cannot read properties of undefined (reading 'map')</div>
-            <div class="msg msg--pica"><img class="sprite sprite--28 msg__avatar" src="/pica.png" alt="" width="28" height="28" /><span class="msg__text">You asked a list to draw itself before the list existed. Your data hasn't arrived yet — it's still <strong>undefined</strong> — and you called <strong>.map()</strong> on nothing.</span></div>
-            <div class="msg msg--pica"><img class="sprite sprite--28 msg__avatar" src="/pica.png" alt="" width="28" height="28" /><span class="msg__text"><strong>Concept — loading state.</strong> Your screen renders <em>before</em> the data lands. Tell it what to show while it's still empty. 🐾</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Act 2 — PRACTICE (phone · text) -->
-    <div class="act act--reverse">
-      <div class="act__copy">
-        <span class="act__num">02 · Practice</span>
-        <h3 class="h3">Then it makes you write the next one.</h3>
-        <p>Pica stops the agent and hands you the keyboard. Hints come one at a time — you only get the answer after you've actually tried. You start with one line. You end up owning the file.</p>
-      </div>
-      <div class="act__demo">
-        <div class="phone phone--static">
-          <div class="phone__header">
-            <img class="sprite sprite--28" src="/pica.png" alt="" width="28" height="28" />
-            <div class="phone__title"><strong>Pica</strong><span class="phone__status">online · your turn</span></div>
-            <span class="mode-badge mode-badge--practice">PRACTICE</span>
-          </div>
-          <div class="thread thread--static">
-            <div class="msg msg--pica"><img class="sprite sprite--28 msg__avatar" src="/pica.png" alt="" width="28" height="28" /><span class="msg__text">Fix's left out on purpose. Line 14, above the return. One line. Off you go.</span></div>
-            <div class="msg msg--code">  const posts = useFeed();
-
-<span class="hl">  // TODO(you): handle the empty state</span>
-
-  return (</div>
-            <div class="msg msg--user mono">if (!posts) return &lt;Spinner /&gt;</div>
-            <div class="msg msg--pica"><img class="sprite sprite--28 msg__avatar" src="/pica.png" alt="" width="28" height="28" /><span class="msg__text">✓ That's it — and cleaner than mine. You returned early instead of nesting. <strong>New concept: early return.</strong></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Act 3 — OWN IT (text · phone recap) -->
-    <div class="act">
-      <div class="act__copy">
-        <span class="act__num">03 · Own it</span>
-        <h3 class="h3">The file you couldn't read? Now it's yours.</h3>
-        <p>Pica remembers every concept it taught you, so week two is shorter than week one. You stop nodding along in standups — and start shipping code you actually understand.</p>
-      </div>
-      <div class="act__demo">
-        <div class="phone phone--static">
-          <div class="phone__header">
-            <img class="sprite sprite--28" src="/pica.png" alt="" width="28" height="28" />
-            <div class="phone__title"><strong>Pica</strong><span class="phone__status">online · you're levelling up</span></div>
-            <span class="mode-badge mode-badge--own">OWN IT</span>
-          </div>
-          <div class="thread thread--static">
-            <div class="owncard">
-              <p class="owncard__title">This week you owned</p>
-              <ul class="owncard__list">
-                <li>loading state</li>
-                <li>persistence</li>
-                <li>side effects</li>
-                <li>early return</li>
-              </ul>
-              <p class="owncard__count"><span>4</span> concepts owned · 5-day streak 🔥</p>
-            </div>
-            <div class="msg msg--pica"><img class="sprite sprite--28 msg__avatar" src="/pica.png" alt="" width="28" height="28" /><span class="msg__text">The file you couldn't read last Tuesday? You just edited it without me. 🐾</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="ground"></div>
-
-  <!-- ===== 4b. FEATURES GRID (amy-style) ===== -->
+  <!-- ===== 3 FEATURE PARTS ===== -->
   <section class="section features">
     <header class="acts__head">
-      <p class="eyebrow">Everything included</p>
-      <h2 class="h2">A whole tutor, for less than lunch.</h2>
+      <p class="eyebrow">What Pica does for you</p>
+      <h2 class="h2">From nodding along<br /><span class="accent">to actually knowing.</span></h2>
     </header>
-    <div class="feat-grid">
+    <div class="feat-grid feat-grid--3">
       <article class="feat">
         <span class="feat__mark">🗣️</span>
-        <h3 class="feat__title">In designer, not engineer</h3>
-        <p>Every explanation in words you already use, with analogies you already get. No jargon walls.</p>
+        <h3 class="feat__title">Understand every line</h3>
+        <p>Your agent writes; Pica explains what it does in words you already use — no jargon. You stop approving code you can't read, and start knowing what you shipped.</p>
       </article>
       <article class="feat">
-        <span class="feat__mark">🧠</span>
-        <h3 class="feat__title">It remembers you</h3>
-        <p>Pica never re-teaches what you've learned. Week two is shorter than week one.</p>
+        <span class="feat__mark">✍️</span>
+        <h3 class="feat__title">Learn by doing</h3>
+        <p>One tiny drill a day. Pica hides a line and hands you the keyboard — you type it yourself, until it sticks. Reading about code never made anyone fluent; writing it does.</p>
       </article>
       <article class="feat">
-        <span class="feat__mark">🧩</span>
-        <h3 class="feat__title">Lives in your editor</h3>
-        <p>A side panel in VS Code &amp; Cursor. It sees what your agent writes the moment it lands — no copy-paste, no context-switch.</p>
-      </article>
-      <article class="feat">
-        <span class="feat__mark">⌨️</span>
-        <h3 class="feat__title">Works with your setup</h3>
-        <p>Claude Code, Cursor, or any terminal. Pica reads whatever your agent just wrote.</p>
-      </article>
-      <article class="feat">
-        <span class="feat__mark">🎧</span>
-        <h3 class="feat__title">Voice notes</h3>
-        <p>Some things land better heard than read. Pica sends a 14-second explainer when it helps.</p>
-      </article>
-      <article class="feat">
-        <span class="feat__mark">🐾</span>
-        <h3 class="feat__title">A drill a day</h3>
-        <p>One tiny exercise at 6pm. You end up owning the file — not just clicking approve.</p>
+        <span class="feat__mark">🚀</span>
+        <h3 class="feat__title">Become the developer</h3>
+        <p>Week by week the black box clears. One day you ship something and understand every part of it — no nodding, no fraud feeling. That's the day Pica's done its job.</p>
       </article>
     </div>
   </section>
 
   <div class="ground"></div>
 
-  <!-- ===== 4c. CREATOR NOTE (amy-style) ===== -->
-  <section class="section maker">
-    <div class="maker__card">
-      <img class="sprite sprite--48 maker__pic" src="/pica.png" alt="Pica" width="48" height="48" />
-      <div class="maker__body">
-        <p class="eyebrow">Why I made Pica</p>
-        <p>I'm a designer. I started shipping real features with Claude Code — and realised I was approving code I couldn't read a single line of. It felt like signing documents in a language I didn't speak.</p>
-        <p>Pica is the tutor I wished I had: patient, a little silly, and fluent in both design and code. If you've ever nodded along in a standup hoping nobody asked a follow-up — this one's for you. 🐾</p>
-        <p class="maker__sign">— Sriram, Stimuler</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="ground"></div>
-
-  <!-- ===== 5. BUY ===== -->
-  <section class="section buy" id="buy">
-    <div class="dbox dbox--wide">
-      <div class="dbox__face"><img class="sprite sprite--40" src="/pica.png" alt="Pica" width="40" height="40" /></div>
-      <div class="dbox__body buy__body">
-        <div class="buy__left">
-          <span class="dbox__tag">Loved the free taste? Go all in.</span>
-          <div class="price"><span class="price__num">₹99</span><span class="price__note">once · unlocks everything</span></div>
-          <ul class="ticklist">
-            <li>Unlimited explanations + daily practice drills</li>
-            <li>Both modes: Decode &amp; Practice, fully unlocked</li>
-            <li>Works with Claude Code, Cursor, any terminal</li>
-            <li>Refund on request, no argument</li>
-          </ul>
+  <!-- ===== HOW IT WORKS (setup) ===== -->
+  <section class="section how">
+    <header class="acts__head">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2">Up and running in a minute.</h2>
+    </header>
+    <ol class="steps">
+      <li class="step">
+        <span class="step__n">1</span>
+        <div>
+          <h3 class="step__title">Install the panel</h3>
+          <p>Add Pica to VS&nbsp;Code or Cursor — a little side panel that sits next to your coding agent.</p>
         </div>
-        <div class="buy__right">
-          <label class="field-label" for="buy-email">Your email</label>
-          <input class="field" id="buy-email" type="email" inputmode="email" placeholder="you@studio.com" autocomplete="email" />
-          <button class="btn btn--primary btn--block" data-buy>Pay ₹99 →</button>
-          <p class="microcopy" id="buy-msg">Secure checkout via Dodo. We save your email first, so if checkout hiccups we can still reach you.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">2</span>
+        <div>
+          <h3 class="step__title">Give it a look</h3>
+          <p>Grant permission once, and Pica quietly watches the code your agent writes — no copy-paste, no context-switch.</p>
         </div>
-      </div>
-    </div>
-  </section>
+      </li>
+      <li class="step">
+        <span class="step__n">3</span>
+        <div>
+          <h3 class="step__title">Build like normal</h3>
+          <p>When Pica spots something worth knowing, it pipes up, explains it in your words — then quizzes you so it sticks.</p>
+        </div>
+      </li>
+    </ol>
 
-  <div class="ground"></div>
-
-  <!-- ===== 6. WAITLIST + FOOTER ===== -->
-  <section class="section waitlist" id="waitlist">
-    <div class="dbox">
-      <div class="dbox__face"><img class="sprite sprite--40" src="/pica.png" alt="Pica" width="40" height="40" /></div>
-      <div class="dbox__body">
-        <span class="dbox__tag">Start free</span>
-        <h3 class="h3">Get early access</h3>
-        <p>Drop your email and I'll send your install link the moment Pica opens up — plus a 60-second clip of it reading a real error. 🐾</p>
-        <form class="wform" id="wform">
-          <input class="field" name="email" type="email" required inputmode="email" placeholder="you@studio.com" autocomplete="email" />
-          <input class="field" name="building" type="text" placeholder="What are you building right now? (optional)" />
-          <button class="btn btn--primary btn--block" type="submit">Start free →</button>
-          <p class="microcopy" id="wform-msg" aria-live="polite"></p>
-        </form>
+    <!-- bottom signup -->
+    <div class="join" id="join">
+      <div class="join__card">
+        <img class="sprite sprite--48 join__pic" src="/pica.png" alt="Pica" width="48" height="48" />
+        <div class="join__body">
+          <h3 class="h3">Get your install link</h3>
+          <p>Drop your email and I'll send it the moment Pica opens up. Free. 🐾</p>
+          <form class="signup" data-signup aria-label="Join the list">
+            <input class="field" name="email" type="email" required inputmode="email" placeholder="you@studio.com" autocomplete="email" />
+            <button class="btn btn--primary" type="submit">Join the list</button>
+          </form>
+          <p class="microcopy signup__msg" data-signup-msg aria-live="polite"></p>
+        </div>
       </div>
     </div>
   </section>
@@ -283,14 +120,8 @@
   <footer class="footer">
     <img class="sprite sprite--32" src="/pica.png" alt="Pica" width="32" height="32" />
     <span class="wordmark">Pica</span>
-    <span class="footer__line">Built in a day. Refunds on request, always.</span>
+    <span class="footer__line">Built in a day. Made for designers who ship.</span>
   </footer>
-
-  <!-- sticky mobile buy bar -->
-  <div class="buybar" id="buybar">
-    <span class="buybar__price">Free to start · ₹99 to go full</span>
-    <a class="btn btn--primary btn--sm" href="#waitlist">Start free</a>
-  </div>
 
   <script src="/app.js"></script>
 </body>
