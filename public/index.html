@@ -47,33 +47,40 @@
       <p class="microcopy">Free to start · Installs in VS Code &amp; Cursor · ₹99 unlocks everything</p>
     </div>
 
-    <!-- ===== 3. THE PROTOTYPE — pick-a-moment scenario player ===== -->
-    <div class="hero__demo">
-      <div class="demo" id="proto">
-        <p class="demo__prompt">Pick a moment you know too well&nbsp;↓</p>
-        <div class="chips" id="chips" role="tablist">
-          <button class="chip is-active" data-scn="error" role="tab"><span class="chip__dot" style="background:#D9503F"></span>A red error appeared</button>
-          <button class="chip" data-scn="diff" role="tab"><span class="chip__dot" style="background:#5E9E45"></span>My agent changed 12 files</button>
-          <button class="chip" data-scn="concept" role="tab"><span class="chip__dot" style="background:#E8823C"></span>“What's a useEffect?”</button>
-          <button class="chip" data-scn="practice" role="tab"><span class="chip__dot" style="background:#4A2A1A"></span>Let me try it myself</button>
-        </div>
-        <div class="phone">
-          <div class="phone__header">
-            <img class="sprite sprite--28" src="/pica.png" alt="" width="28" height="28" />
-            <div class="phone__title">
-              <strong>Pica</strong>
-              <span class="phone__status">online · reading your code</span>
-            </div>
-            <span class="mode-badge" id="mode-badge">TEACH</span>
-            <button class="phone__replay" data-replay title="Replay this one">↻</button>
-          </div>
-          <div class="thread" id="thread" aria-live="polite"></div>
-          <div class="phone__composer">
-            <span class="composer__field">Message Pica…</span>
-            <span class="composer__send">➤</span>
-          </div>
-        </div>
+  </section>
+
+  <!-- ===== 3. THE DEMO — simulated editor walkthrough ===== -->
+  <section class="section demo-ide" id="proto">
+    <header class="acts__head">
+      <p class="eyebrow">Watch it work</p>
+      <h2 class="h2">Pica rides along while your AI codes.</h2>
+      <p class="demo-sub">Your agent writes. Pica notices the teachable bits, explains them in your words, then hands you the keyboard. Here's a real minute of it.</p>
+      <div class="tone-toggle" role="group" aria-label="Teaching tone">
+        <span>Teach me like a</span>
+        <button class="tone-btn is-active" data-tone="friend">Friend</button>
+        <button class="tone-btn" data-tone="professor">Professor</button>
       </div>
+    </header>
+
+    <div class="ide" id="ide">
+      <div class="ide__bar">
+        <span class="ide__dots"><i></i><i></i><i></i></span>
+        <span class="ide__file">Feed.jsx</span>
+        <span class="ide__agent" id="ide-agent">● Hermes · writing</span>
+      </div>
+      <div class="ide__body">
+        <div class="ide__code"><pre id="ide-code" aria-hidden="true"></pre></div>
+        <aside class="ide__panel">
+          <div class="panel__head">
+            <img class="sprite sprite--28" src="/pica.png" alt="" width="28" height="28" />
+            <div class="phone__title"><strong>Pica</strong><span class="phone__status" id="panel-status">waking up…</span></div>
+          </div>
+          <div class="thread thread--panel" id="panel-thread" aria-live="polite"></div>
+        </aside>
+      </div>
+    </div>
+    <div class="demo-controls">
+      <button class="btn btn--ghost btn--sm" id="demo-replay">↻ Replay the minute</button>
     </div>
   </section>
 

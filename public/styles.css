@@ -114,6 +114,43 @@ img.sprite{image-rendering:pixelated;image-rendering:crisp-edges;display:block}
 .owncard__count{font-family:var(--font-mono);font-size:.74rem;color:var(--orange-lt);border-top:2px solid #333;padding-top:.55rem}
 .owncard__count span{font-family:var(--font-display);font-size:1.1rem;color:var(--orange)}
 
+/* -------- demo: simulated editor walkthrough -------- */
+.demo-sub{font-size:1.02rem;color:#3a2114;max-width:56ch;margin:0 auto}
+.tone-toggle{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.78rem;color:var(--brown);margin-top:.4rem;flex-wrap:wrap;justify-content:center}
+.tone-btn{font-family:var(--font-body);font-weight:500;font-size:.82rem;background:var(--paper);color:var(--dark);border:2px solid var(--dark);box-shadow:2px 2px 0 var(--dark);padding:.28rem .6rem;cursor:pointer;line-height:1}
+.tone-btn.is-active{background:var(--orange);transform:translate(1px,1px);box-shadow:1px 1px 0 var(--dark)}
+
+.ide{max-width:960px;margin:0 auto;border:var(--border);box-shadow:var(--shadow);background:var(--ink)}
+.ide__bar{display:flex;align-items:center;gap:.7rem;padding:.5rem .8rem;background:#2a2320;border-bottom:2px solid #000;color:var(--sky)}
+.ide__dots{display:inline-flex;gap:5px}
+.ide__dots i{width:11px;height:11px;background:#5a4a40;display:block;border:1px solid #000}
+.ide__dots i:nth-child(1){background:#D9503F}.ide__dots i:nth-child(2){background:#E8823C}.ide__dots i:nth-child(3){background:#5E9E45}
+.ide__file{font-family:var(--font-mono);font-size:.78rem;color:#c9bfb5}
+.ide__agent{margin-left:auto;font-family:var(--font-mono);font-size:.68rem;color:var(--orange-lt);white-space:nowrap}
+.ide__body{display:grid;grid-template-columns:1.15fr .85fr;min-height:420px}
+.ide__code{background:var(--ink);padding:1rem 1.1rem;overflow:auto;border-right:2px solid #000}
+.ide__code pre{font-family:var(--font-mono);font-size:.82rem;line-height:1.7;color:#E8EDE4;white-space:pre-wrap;word-break:break-word;margin:0}
+.ide__code .k{color:#F7A878}   /* keyword */
+.ide__code .s{color:#8FCf74}   /* string  */
+.ide__code .c{color:#7d6f63}   /* comment */
+.ide__code .hlline{background:rgba(232,130,60,.22);box-shadow:-6px 0 0 rgba(232,130,60,.22);display:inline-block;width:100%}
+.ide__code .caret{display:inline-block;width:8px;height:1.05em;background:var(--orange);vertical-align:text-bottom;animation:blink 1s steps(2) infinite}
+.ide__code .blank{display:inline-block;min-width:88px;border-bottom:2px solid var(--orange);color:var(--orange-lt)}
+.ide__code .blank input{font-family:var(--font-mono);font-size:.82rem;background:#000;color:var(--orange-lt);border:1px solid var(--orange);padding:0 .3rem;width:120px}
+.ide__panel{display:flex;flex-direction:column;background:var(--paper);min-width:0}
+.panel__head{display:flex;align-items:center;gap:.55rem;padding:.55rem .75rem;background:var(--ink);color:#fff;border-bottom:2px solid #000}
+.thread--panel{height:auto;flex:1;background:#DDE4D6;padding:.8rem;display:flex;flex-direction:column;gap:.55rem;overflow-y:auto;max-height:360px}
+.panel-action{align-self:flex-start;font-family:var(--font-display);font-weight:700;font-size:.9rem;background:var(--orange);color:var(--ink);border:2px solid var(--dark);box-shadow:3px 3px 0 var(--dark);padding:.5rem .8rem;cursor:pointer;line-height:1}
+.panel-action:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--dark)}
+.panel-action--ghost{background:var(--paper)}
+.msg code{font-family:var(--font-mono);font-size:.88em;background:#e8dccb;color:#5a3418;padding:0 3px;border:1px solid #d3c2a8}
+.hint{color:var(--brown);font-size:.9em}
+.demo-controls{display:flex;justify-content:center;margin-top:1.2rem}
+@media (max-width:760px){
+  .ide__body{grid-template-columns:1fr}
+  .ide__code{border-right:none;border-bottom:2px solid #000;max-height:230px}
+}
+
 /* -------- features grid (amy-style) -------- */
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.5vw,1.5rem)}
 .feat{background:var(--paper);border:var(--border);box-shadow:var(--shadow);padding:1.4rem 1.4rem 1.5rem;
