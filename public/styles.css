@@ -168,7 +168,25 @@ img.sprite{image-rendering:pixelated;image-rendering:crisp-edges;display:block}
 .maker__body p{font-size:1.02rem;color:#3a2114;max-width:60ch}
 .maker__sign{font-family:var(--font-mono);font-size:.82rem;color:var(--brown)}
 
-/* -------- simplified page: hero cat, signup, steps, join -------- */
+/* -------- delight pass: reveals, idle cat, ambient pixels, confetti -------- */
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0}
+  .reveal.in{animation:rise .45s steps(5) forwards}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+  .hero__cat img{animation:idle 2.4s steps(2) infinite}
+  @keyframes idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  .hero__cat.peek img{animation:none;transform:rotate(-6deg) scale(1.06);transition:transform .12s steps(2)}
+
+  .typeline::after{content:"▌";color:var(--orange);animation:caret 1s steps(2) infinite;margin-left:2px}
+  .typeline.done::after{opacity:0;animation:none}
+  @keyframes caret{50%{opacity:0}}
+
+  .amb{position:absolute;width:10px;height:10px;opacity:.35;pointer-events:none;animation:drift linear infinite;image-rendering:pixelated}
+  @keyframes drift{from{transform:translateY(0)}to{transform:translateY(-120vh)}}
+}
+.hero{position:relative;overflow:hidden}
+.confetti-bit{position:fixed;width:8px;height:8px;z-index:999;pointer-events:none}
 .sprite--hero{width:clamp(104px,22vw,148px);height:auto}
 .hero__cat{display:flex;justify-content:center;margin:.1rem 0}
 .signup{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;max-width:460px;margin:.5rem auto 0;width:100%}
