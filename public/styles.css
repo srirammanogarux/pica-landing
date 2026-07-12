@@ -52,6 +52,15 @@ img.sprite{image-rendering:pixelated;image-rendering:crisp-edges;display:block}
 .btn--sm{font-size:.85rem;padding:.5rem .85rem;box-shadow:var(--shadow-sm)}
 .btn--block{width:100%;justify-content:center;padding:.85rem 1rem;font-size:1.1rem}
 
+/* -------- marquee tape -------- */
+.marquee{overflow:hidden;background:var(--dark);border-bottom:var(--border);white-space:nowrap}
+.marquee__track{display:inline-flex;will-change:transform}
+.marquee__track span{font-family:var(--font-mono);font-weight:500;font-size:.72rem;letter-spacing:.14em;color:var(--sky);padding:.4rem 0;display:inline-block}
+@media (prefers-reduced-motion:no-preference){
+  .marquee__track{animation:scroll-tape 26s linear infinite}
+}
+@keyframes scroll-tape{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
 /* -------- hero -------- */
 .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
 .hero__copy{display:flex;flex-direction:column;gap:1.1rem}
@@ -99,10 +108,20 @@ img.sprite{image-rendering:pixelated;image-rendering:crisp-edges;display:block}
 
 /* ================= PHONE / PROTOTYPE ================= */
 .phone{width:min(360px,100%);background:var(--paper);border:var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column}
-.phone__tabs{display:flex;align-items:stretch;border-bottom:var(--border);background:var(--sky)}
-.tab{flex:1;font-family:var(--font-display);font-weight:700;font-size:.95rem;padding:.6rem;background:var(--sky);border:none;border-right:var(--border);cursor:pointer;color:var(--brown)}
-.tab.is-active{background:var(--orange);color:var(--ink)}
-.tab-replay{width:44px;background:var(--paper);border:none;font-size:1.1rem;cursor:pointer;color:var(--dark)}
+/* demo wrapper + scenario chips */
+.demo{display:flex;flex-direction:column;gap:.7rem;width:min(360px,100%)}
+.demo__prompt{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brown);text-align:center}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.chip{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-body);font-weight:500;font-size:.82rem;
+  background:var(--paper);color:var(--dark);border:2px solid var(--dark);box-shadow:3px 3px 0 var(--dark);
+  padding:.4rem .6rem;cursor:pointer;line-height:1;transition:transform .05s steps(2),box-shadow .05s steps(2)}
+.chip:hover{background:var(--white)}
+.chip.is-active{background:var(--orange);transform:translate(1px,1px);box-shadow:2px 2px 0 var(--dark)}
+.chip__dot{width:9px;height:9px;flex:0 0 auto;border:1.5px solid var(--dark)}
+.mode-badge{margin-left:auto;font-family:var(--font-mono);font-weight:500;font-size:.6rem;letter-spacing:.1em;padding:.2rem .4rem;border:2px solid #000;color:var(--ink)}
+.mode-badge--teach{background:var(--orange)}
+.mode-badge--practice{background:var(--grass);color:var(--white)}
+.phone__replay{background:transparent;border:none;font-size:1.05rem;cursor:pointer;color:var(--white);padding:0 .1rem}
 .phone__header{display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;background:var(--ink);color:var(--white);border-bottom:var(--border)}
 .phone__title{display:flex;flex-direction:column;line-height:1.15}
 .phone__title strong{font-family:var(--font-body);font-weight:500;font-size:.95rem}

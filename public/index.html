@@ -26,6 +26,14 @@
 
   <a id="top"></a>
 
+  <!-- ===== MARQUEE TAPE ===== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>PASTE ANY ERROR ✦ LEARN WHAT YOU SHIP ✦ STOP APPROVING BLINDLY ✦ ₹99 ONCE ✦ RUNS IN TELEGRAM ✦ </span>
+      <span>PASTE ANY ERROR ✦ LEARN WHAT YOU SHIP ✦ STOP APPROVING BLINDLY ✦ ₹99 ONCE ✦ RUNS IN TELEGRAM ✦ </span>
+    </div>
+  </div>
+
   <!-- ===== 2. HERO ===== -->
   <section class="hero section">
     <div class="hero__copy">
@@ -39,25 +47,31 @@
       <p class="microcopy">One payment. Yours forever. Refund on request, no argument.</p>
     </div>
 
-    <!-- ===== 3. THE PROTOTYPE ===== -->
+    <!-- ===== 3. THE PROTOTYPE — pick-a-moment scenario player ===== -->
     <div class="hero__demo">
-      <div class="phone" id="proto">
-        <div class="phone__tabs" role="tablist">
-          <button class="tab is-active" data-tab="teach" role="tab">Teach</button>
-          <button class="tab" data-tab="practice" role="tab">Practice</button>
-          <button class="tab-replay" data-replay title="Replay">↻</button>
+      <div class="demo" id="proto">
+        <p class="demo__prompt">Pick a moment you know too well&nbsp;↓</p>
+        <div class="chips" id="chips" role="tablist">
+          <button class="chip is-active" data-scn="error" role="tab"><span class="chip__dot" style="background:#D9503F"></span>A red error appeared</button>
+          <button class="chip" data-scn="diff" role="tab"><span class="chip__dot" style="background:#5E9E45"></span>My agent changed 12 files</button>
+          <button class="chip" data-scn="concept" role="tab"><span class="chip__dot" style="background:#E8823C"></span>“What's a useEffect?”</button>
+          <button class="chip" data-scn="practice" role="tab"><span class="chip__dot" style="background:#4A2A1A"></span>Let me try it myself</button>
         </div>
-        <div class="phone__header">
-          <img class="sprite sprite--28" src="/pica.png" alt="" width="28" height="28" />
-          <div class="phone__title">
-            <strong>Pica</strong>
-            <span class="phone__status">online · reading your code</span>
+        <div class="phone">
+          <div class="phone__header">
+            <img class="sprite sprite--28" src="/pica.png" alt="" width="28" height="28" />
+            <div class="phone__title">
+              <strong>Pica</strong>
+              <span class="phone__status">online · reading your code</span>
+            </div>
+            <span class="mode-badge" id="mode-badge">TEACH</span>
+            <button class="phone__replay" data-replay title="Replay this one">↻</button>
           </div>
-        </div>
-        <div class="thread" id="thread" aria-live="polite"></div>
-        <div class="phone__composer">
-          <span class="composer__field">Message Pica…</span>
-          <span class="composer__send">➤</span>
+          <div class="thread" id="thread" aria-live="polite"></div>
+          <div class="phone__composer">
+            <span class="composer__field">Message Pica…</span>
+            <span class="composer__send">➤</span>
+          </div>
         </div>
       </div>
     </div>
