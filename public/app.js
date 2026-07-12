@@ -5,7 +5,7 @@
 const CONFIG = {
   // Convex deployment URL, e.g. https://your-deployment-123.convex.cloud
   // Leave blank to run the page (signups log to the console instead of saving).
-  CONVEX_URL: "",
+  CONVEX_URL: "https://doting-cuttlefish-341.convex.cloud",
   SOURCE: "landing",
 };
 
