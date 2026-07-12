@@ -43,7 +43,7 @@ const saveOrder = (email) =>
 /* =====================================================================
    THE PROTOTYPE — self-playing Telegram thread (TEACH / PRACTICE)
    ===================================================================== */
-const AV = `<img class="sprite sprite--28 msg__avatar" src="/public/pica.png" alt="Pica" width="28" height="28" />`;
+const AV = `<img class="sprite sprite--28 msg__avatar" src="/pica.png" alt="Pica" width="28" height="28" />`;
 const VOICE = `<div class="voice"><span class="voice__play">▶</span>
   <span class="voice__wave">${Array.from({length:22},(_,i)=>`<i style="height:${20+16*Math.abs(Math.sin(i*0.9))|0}%"></i>`).join("")}</span>
   <span class="voice__time">0:14</span></div>`;
