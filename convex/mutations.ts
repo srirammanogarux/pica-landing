@@ -50,6 +50,20 @@ export const createOrder = mutation({
   },
 });
 
+// Usage ping from the plugin (fire-and-forget): email + event kind + token count.
+// Users run inference on their OWN OpenRouter key — this is metrics only.
+export const logEvent = mutation({
+  args: { email: v.string(), kind: v.string(), tokens: v.number() },
+  handler: async (ctx, args) => {
+    await ctx.db.insert("usage", {
+      email: args.email.trim().toLowerCase(),
+      kind: args.kind,
+      tokens: args.tokens,
+      createdAt: Date.now(),
+    });
+  },
+});
+
 // Optional: called by a Dodo webhook to flip an order to paid.
 export const markPaid = mutation({
   args: { email: v.string(), dodoRef: v.string() },
