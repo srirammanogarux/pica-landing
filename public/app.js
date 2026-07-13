@@ -47,8 +47,6 @@ document.querySelectorAll("[data-signup]").forEach((form)=>{
     if(r.ok || r.offline){
       if(msg) msg.innerHTML = 'You\'re in 🐾 <a href="/pica.vsix" download>Download the plugin</a>, install it in VS Code / Cursor (Extensions → ⋯ → <em>Install from VSIX</em>), and tell Pica this same email.';
       confetti(form.querySelector("button"));
-      var hc = document.getElementById("hero-cat");
-      if(hc && !reduced){ hc.src = "/cat-cheer.webp"; setTimeout(function(){ hc.src = "/cat-idle.webp"; }, 2800); }
       form.reset();
     } else if(msg){
       msg.textContent = "Hmm, that didn't save — try again in a sec?";
@@ -87,14 +85,7 @@ function confetti(fromEl){
 }
 
 if(!reduced){
-  // 1 — hero cat is now a live animated sprite (idle loop). It perks up on focus.
-  const heroCat = document.querySelector(".hero__cat");
-  if(heroCat){
-    document.querySelectorAll(".signup input[name=email]").forEach(function(inp){
-      inp.addEventListener("focus", function(){ heroCat.classList.add("peek"); });
-      inp.addEventListener("blur", function(){ heroCat.classList.remove("peek"); });
-    });
-  }
+  // hero is a row of live animated cats (all emotions) — nothing to wire.
 
   // 2 — typewriter on the accent line
   const tl = document.getElementById("typeline");

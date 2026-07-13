@@ -189,6 +189,10 @@ img.sprite{image-rendering:pixelated;image-rendering:crisp-edges;display:block}
 .confetti-bit{position:fixed;width:8px;height:8px;z-index:999;pointer-events:none}
 .sprite--hero{width:clamp(104px,22vw,148px);height:auto}
 .hero__cat{display:flex;justify-content:center;margin:.1rem 0}
+/* the whole Pica squad, all emotions looping */
+.hero__cats{display:flex;justify-content:center;align-items:flex-end;gap:clamp(.2rem,2vw,1.4rem);flex-wrap:wrap;margin:.1rem 0}
+.herocat{width:clamp(84px,13vw,132px);height:auto;image-rendering:pixelated}
+@media (max-width:520px){ .hero__cats{gap:.1rem} .herocat{width:22vw} }
 .signup{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;max-width:460px;margin:.5rem auto 0;width:100%}
 .signup .field{flex:1 1 200px;min-width:180px}
 .signup .btn{white-space:nowrap}
