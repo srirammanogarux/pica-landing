@@ -45,7 +45,10 @@ document.querySelectorAll("[data-signup]").forEach((form)=>{
     if(msg) msg.textContent = "Adding you…";
     const r = await saveEmail(email);
     if(r.ok || r.offline){
-      if(msg) msg.innerHTML = 'You\'re in 🐾 <a href="/pica.vsix" download>Download the plugin</a>, install it in VS Code / Cursor (Extensions → ⋯ → <em>Install from VSIX</em>), and tell Pica this same email.';
+      // hand over the package immediately
+      var dl = document.createElement("a"); dl.href = "/pica.vsix"; dl.download = "pica-tutor.vsix";
+      document.body.appendChild(dl); dl.click(); dl.remove();
+      if(msg) msg.innerHTML = 'Downloading Pica ⬇️ In VS Code / Cursor: <strong>Extensions → ⋯ → Install from VSIX</strong>, pick the file, then open the cat panel and enter this same email. <a href="/pica.vsix" download="pica-tutor.vsix">Re-download</a>.';
       confetti(form.querySelector("button"));
       form.reset();
     } else if(msg){
