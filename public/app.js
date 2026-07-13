@@ -47,6 +47,8 @@ document.querySelectorAll("[data-signup]").forEach((form)=>{
     if(r.ok || r.offline){
       if(msg) msg.innerHTML = 'You\'re in 🐾 <a href="/pica.vsix" download>Download the plugin</a>, install it in VS Code / Cursor (Extensions → ⋯ → <em>Install from VSIX</em>), and tell Pica this same email.';
       confetti(form.querySelector("button"));
+      var hc = document.getElementById("hero-cat");
+      if(hc && !reduced){ hc.src = "/cat-cheer.webp"; setTimeout(function(){ hc.src = "/cat-idle.webp"; }, 2800); }
       form.reset();
     } else if(msg){
       msg.textContent = "Hmm, that didn't save — try again in a sec?";
@@ -85,19 +87,9 @@ function confetti(fromEl){
 }
 
 if(!reduced){
-  // 1 — hero cat blinks (swap to the closed-eyes frame for 130ms, randomly)
-  const cat = document.querySelector(".hero__cat img");
-  if(cat){
-    const blink = new Image(); blink.src = "/pica-blink.png";
-    const open = cat.src;
-    (function blinkLoop(){
-      setTimeout(function(){
-        cat.src = blink.src;
-        setTimeout(function(){ cat.src = open; blinkLoop(); }, 130);
-      }, 2200 + Math.random()*2600);
-    })();
-    // cat perks up when you focus the signup box
-    const heroCat = document.querySelector(".hero__cat");
+  // 1 — hero cat is now a live animated sprite (idle loop). It perks up on focus.
+  const heroCat = document.querySelector(".hero__cat");
+  if(heroCat){
     document.querySelectorAll(".signup input[name=email]").forEach(function(inp){
       inp.addEventListener("focus", function(){ heroCat.classList.add("peek"); });
       inp.addEventListener("blur", function(){ heroCat.classList.remove("peek"); });
