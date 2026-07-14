@@ -24,4 +24,12 @@ export default defineSchema({
     tokens: v.number(),
     createdAt: v.number(),
   }).index("by_email", ["email"]),
+
+  // in-product feedback: after a user's first practice, Pica asks if it's helping
+  feedback: defineTable({
+    email: v.string(),
+    rating: v.string(),          // up | down
+    note: v.optional(v.string()),
+    createdAt: v.number(),
+  }).index("by_email", ["email"]),
 });

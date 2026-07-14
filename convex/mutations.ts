@@ -64,6 +64,19 @@ export const logEvent = mutation({
   },
 });
 
+// In-product feedback from the plugin: rating (up/down) + an optional note.
+export const addFeedback = mutation({
+  args: { email: v.string(), rating: v.string(), note: v.optional(v.string()) },
+  handler: async (ctx, args) => {
+    await ctx.db.insert("feedback", {
+      email: args.email.trim().toLowerCase(),
+      rating: args.rating === "down" ? "down" : "up",
+      note: (args.note || "").slice(0, 500),
+      createdAt: Date.now(),
+    });
+  },
+});
+
 // Optional: called by a Dodo webhook to flip an order to paid.
 export const markPaid = mutation({
   args: { email: v.string(), dodoRef: v.string() },
